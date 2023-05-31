@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Hanoosh</title>
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS file for styling -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400&family=Raleway:wght@300;700&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+            font-family: 'Raleway', sans-serif;
+            font-family: 'Source Sans Pro', sans-serif;
+            overflow-x: hidden;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            margin-top:5%;
+        }
+
+            .card img {
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 50%;
+                margin-bottom: 10px;
+            }
+
+            .card:hover {
+                transform: scale(1.1);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            }
+
+
+        header {
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            color: white;
+            text-align: center;
+
+        }
+
+            header h1 {
+                margin: 0;
+                font-size: 24px;
+            }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+            nav ul li {
+                display: inline;
+                margin: 0 10px;
+            }
+
+                nav ul li a {
+                    text-decoration: none;
+                    color: #fff;
+                }
+
+        section {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            color: #fff;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+        }
+
+        #about {
+            background-image: url("uno.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            color: white;
+            margin-bottom: 10%;
+            padding-top: 20%;
+            padding-bottom: 20%;
+        }
+        hr{
+            width:30%;
+        }
+        #end {
+            background-color: #333;
+            color:white;
+        }
+        .About {
+            display: flex;
+            align-items: center;
+            padding-left: 7%;
+            padding-right: 7%;
+        }
+
+            .About p {
+                flex: 1;
+            }
+
+            .About img {
+                width: 270px;
+                height: auto;
+                border: 2px solid #fff;
+                border-radius: 10px;
+                margin-left: 20px;
+            }
+            p{
+                font-size:14pt;
+            }
+
+
+
+        .floating-contact-form {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .toggle-form {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            background-color: transparent;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            padding: 0;
+            transition: transform 0.5s ease, box-shadow 0.3s;
+        }
+
+            .toggle-form img {
+                border-radius: 50%;
+            }
+
+            .toggle-form:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            }
+
+        .contact-form-container {
+            display: none;
+            position: absolute;
+            bottom: 50px;
+            right: 0;
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 10px 14px rgba(0, 0, 0, 0.3);
+        }
+
+            .contact-form-container h3 {
+                margin-top: 0;
+                font-size: 18px;
+                text-align: center;
+            }
+
+            .contact-form-container form input,
+            .contact-form-container form textarea {
+                width: 100%;
+                margin-bottom: 10px;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .contact-form-container form textarea {
+                height: 80px;
+            }
+
+            .contact-form-container form button {
+                background-color: #337ab7;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                cursor: pointer;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#ab" onclick="scrollToAbout()">About</a></li>
+                <li><a href="#service" onclick="scrollToAbout()">Services</a></li>
+                <li><a href="#e">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class="mt-4">
+            <h1 style="font-size:42pt;"><b>Dr. Hanoosh Family Medicine Practice</b></h1>
+            <p style="padding:10%; font-size:xx-large;">Welcome to Dr. Hanoosh's Family Medicine Practice, a trusted and compassionate family practice in Oshawa, providing comprehensive healthcare services with a patient-centered approach.</p>
+        </div>
+        <spacer></spacer>
+
+    </section>
+
+    <hr />
+
+    <h1 style="align-content:center; margin-top:5%;" id="service"><b>Services</b></h1>
+    <div class="card-container">
+        <div class="card">
+            <img src="c1.jpg" alt="Image 1">
+            <h3>Expert Chronic Disease Management Care</h3>
+            <p>Our chronic disease management service provides tailored care plans, regular check-ins, and education to help patients manage their conditions and improve their quality of life.</p>
+        </div>
+
+        <div class="card">
+            <img src="image2.jpg" alt="Image 2">
+            <h3>Comprehensive Preventive Health Services</h3>
+            <p>Our preventive care service provides comprehensive health screenings and wellness exams to help detect and prevent potential health issues.</p>
+        </div>
+
+        <div class="card">
+            <img src="image3.jpg" alt="Image 3">
+            <h3>Comprehensive Family Healthcare Services</h3>
+            <p>Our family medicine services offer comprehensive primary healthcare for individuals and families, with a focus on preventative care and health education.</p>
+        </div>
+    </div>
+    <hr style="margin:10%" />
+    <section id="end">
+        <h1 style="font-size:36pt;" id="ab">About</h1>
+        <div class="About">
+            <p style="text-align:justify;">
+                Dr. Hanoosh Family Practice in Oshawa is a trusted medical facility providing personalized and compassionate healthcare services to individuals and families.
+                Dr. Hanoosh offers comprehensive care for all ages, focusing on preventive care, check-ups, and managing chronic conditions.
+                With modern facilities and a patient-centered approach,
+                he prioritize the well-being of their patients and strives to build strong doctor-patient relationships based on trust and open communication.
+                <br /><br /> </br><b>Please note the clinic is not accepting new patients at this time</b>
+            </p>
+
+            <img src="doctor.jpg" alt="Doctor Image">
+        </div>
+
+    </section>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('a[href^="#"]').on('click', function (event) {
+                event.preventDefault();
+                var target = $(this.getAttribute('href'));
+                if (target.length) {
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                }
+            });
+        });
+
+
+
+    </script>
+
+    <div class="floating-contact-form">
+        <button class="toggle-form" onclick="toggleContactForm()">
+            <img src="email.png" alt="Email" width="50" height="50">
+        </button>
+
+        <div class="contact-form-container">
+            <h3>Contact Form</h3>
+            <form id="contact-form" onsubmit="submitContactForm(event)">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleContactForm() {
+            var formContainer = document.querySelector('.contact-form-container');
+            formContainer.style.display = formContainer.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function submitContactForm(event) {
+            event.preventDefault();
+
+            // Get the form values
+            var name = document.querySelector('input[name="name"]').value;
+            var email = document.querySelector('input[name="email"]').value;
+            var message = document.querySelector('textarea[name="message"]').value;
+
+            // Create a FormData object
+            var formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('message', message);
+
+            // Use AJAX to send the form data to the PHP script
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'contact-form-handler.php', true);
+            xhr.onload = function () {
+                if (this.status === 200 && this.responseText.trim() == 'success') {
+                    // The email was successfully sent
+                    // Clear the form inputs
+                    document.querySelector('#contact-form').reset();
+                } else {
+                    // Something went wrong
+                    console.error('An error occurred: ' + this.responseText);
+                }
+            };
+            xhr.send(formData);
+        }
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
