@@ -21,8 +21,12 @@
             font-family: 'Raleway', sans-serif;
             font-family: 'Source Sans Pro', sans-serif;
             overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
         }
-
+        main {
+            flex: 1 0 auto;
+        }
         ul {
             list-style-type: none;
         }
@@ -100,11 +104,10 @@
         footer {
             width: 100%;
             background-color: #333;
-            padding: 10px 0;
             color: #fff;
+            padding: 10px 0;
             text-align: center;
-            position: fixed;
-            bottom: 0;
+            flex-shrink: 0;
         }
 
         #about {
@@ -225,7 +228,6 @@
             }
 
 
-
         
     </style>
 </head>
@@ -235,7 +237,7 @@
             <ul>
                 <li><a href="#ab" onclick="scrollToAbout()">About</a></li>
                 <li><a href="#service" onclick="scrollToAbout()">Services</a></li>
-                <li><a href="#e">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -366,7 +368,11 @@
 
 
 
-
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2023 Dr. Hanoosh Family Medicine Practice. All rights reserved.<br />@A.Hanoosh</p>
+        </div>
+    </footer>
 
 </body>
 
