@@ -25,6 +25,40 @@
             display: flex;
             flex-direction: column;
         }
+        @media screen and (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            .card-container {
+                flex-direction: column;
+            }
+
+            .card {
+                margin: 10px auto;
+            }
+
+            .About {
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: center;
+            }
+
+                .About img {
+                    margin: 20px auto;
+                    width: 100%;
+                }
+
+            .floating-contact-form {
+                left: 20px;
+                right: 20px;
+            }
+
+            .contact-form-container {
+                width: 100%;
+                bottom: 70px;
+            }
+        }
 
         main {
             flex: 1 0 auto;
