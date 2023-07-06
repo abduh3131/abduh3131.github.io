@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -189,83 +189,7 @@
             font-size: 14pt;
         }
 
-
-
-        .floating-contact-form {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 9999;
-        }
-
-        .toggle-form {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: none;
-            background-color: transparent;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            padding: 0;
-            transition: transform 0.5s ease, box-shadow 0.3s;
-        }
-
-            .toggle-form img {
-                border-radius: 50%;
-            }
-
-            .toggle-form:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-            }
-
-        .contact-form-container {
-            display: none;
-            position: absolute;
-            bottom: 50px;
-            right: 0;
-            width: 300px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 10px 14px rgba(0, 0, 0, 0.3);
-        }
-
-            .contact-form-container h3 {
-                margin-top: 0;
-                font-size: 18px;
-                text-align: center;
-            }
-
-            .contact-form-container form input,
-            .contact-form-container form textarea {
-                width: 100%;
-                margin-bottom: 10px;
-                padding: 8px;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                box-sizing: border-box;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .contact-form-container form textarea {
-                height: 80px;
-            }
-
-            .contact-form-container form button {
-                background-color: #337ab7;
-                color: white;
-                border: none;
-                padding: 10px 20px;
-                cursor: pointer;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-            }
+       
     </style>
 </head>
 <body>
@@ -348,59 +272,45 @@
 
     </script>
 
-    <div class="floating-contact-form">
-        <button class="toggle-form" onclick="toggleContactForm()">
-            <img src="email.png" alt="Email" width="50" height="50">
-        </button>
 
-        <div class="contact-form-container">
-            <h3>Contact Form</h3>
-            <form id="contact-form" onsubmit="submitContactForm(event)">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
+    <style>
+
+        .floating-call-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .toggle-form {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            background-color: transparent;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            padding: 0;
+            transition: transform 0.5s ease, box-shadow 0.3s;
+        }
+
+            .toggle-form img {
+                border-radius: 50%;
+            }
+
+            .toggle-form:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            }
+    </style>
+    <div class="floating-call-button">
+        <a href="tel:+19052403455" class="toggle-form" title="Call">
+            <img src="po.png" style="width:50px; height:auto;" alt="Call us now">
+        </a>
     </div>
 
-    <script>
-        function toggleContactForm() {
-            var formContainer = document.querySelector('.contact-form-container');
-            formContainer.style.display = formContainer.style.display === 'none' ? 'block' : 'none';
-        }
-
-        function submitContactForm(event) {
-            event.preventDefault();
-
-            // Get the form values
-            var name = document.querySelector('input[name="name"]').value;
-            var email = document.querySelector('input[name="email"]').value;
-            var message = document.querySelector('textarea[name="message"]').value;
-
-            // Create a FormData object
-            var formData = new FormData();
-            formData.append('name', name);
-            formData.append('email', email);
-            formData.append('message', message);
-
-            // Use AJAX to send the form data to the PHP script
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'contact-form-handler.php', true);
-            xhr.onload = function () {
-                if (this.status === 200 && this.responseText.trim() == 'success') {
-                    // The email was successfully sent
-                    // Clear the form inputs
-                    document.querySelector('#contact-form').reset();
-                } else {
-                    // Something went wrong
-                    console.error('An error occurred: ' + this.responseText);
-                }
-            };
-            xhr.send(formData);
-        }
-
-    </script>
 
 
 
