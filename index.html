@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -184,11 +184,16 @@
                 border-radius: 10px;
                 margin-left: 20px;
             }
-
-        p {
-            font-size: 14pt;
-        }
-
+            
+            #htable{
+                font-size:14pt;
+                text-align:center;
+                table-layout:fixed;
+                
+            }
+                #htable td {
+                    padding: 5px 30px; /* Vertical and horizontal padding */
+                }
        
     </style>
 </head>
@@ -211,7 +216,45 @@
         <spacer></spacer>
 
     </section>
+    <hr />
 
+    <h1 style="align-content:center; margin-top:5%; left:50%" id="hours"><b>Hours</b></h1>
+    <div style="padding:5%; margin-top:-2%;" id="hrs">
+        <table id="htable">
+            <tr>
+                <th>Day</th>
+                <th>Hours</th>
+            </tr>
+            <tr>
+                <td>Monday</td>
+                <td>9 a.m.–3 p.m.</td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>9 a.m.–4 p.m.</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>9 a.m.–4 p.m.</td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td>9 a.m.–4 p.m.</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>Closed</td>
+            </tr>
+            <tr>
+                <td>Saturday</td>
+                <td>Closed</td>
+            </tr>
+            <tr>
+                <td>Sunday</td>
+                <td>10 a.m.–2 p.m.</td>
+            </tr>
+        </table>
+    </div>
     <hr />
 
     <h1 style="align-content:center; margin-top:5%;" id="service"><b>Services</b></h1>
