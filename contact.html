@@ -13,15 +13,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <style>
-        .map {
-            height: 400px;
-            width: 100%;
-        }
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-start;
             min-height: 100vh;
             margin: 0;
             padding: 0;
@@ -67,10 +63,11 @@
             font-size: 14pt;
         }
         #map {
-            width: 600px;
+            width: 100%;
+            max-width: 600px;
             height: 450px;
             border: 3px solid black;
-            margin-right: 3%;
+            margin: auto;
         }
         .phone-link {
             transition: color 0.3s ease-in-out;
@@ -147,79 +144,78 @@
 
     <section id="about" style="padding-top:5%;">
         <div>
-            <div style="display: flex; flex-wrap: wrap;">
-                <div style="flex: 1;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+                <div style="flex: 1; max-width: 600px;">
                     <h2>Phone</h2>
                     <p><a href="tel:9052403455" class="phone-link">905-240-3455</a></p>
                     <h2>Fax</h2>
                     <p>905-240-3456</p>
                     <h2>Address</h2>
                     <p>
-                      <a href="https://www.google.com/maps/place/Whitby+Urgent+Care,+1615+Dundas+St+E,+Whitby,+ON+L1N+2L1/@43.8841206,-78.909709,19z/data=!4m14!1m7!3m6!1s0x89d51dc69ae9eddf:0xdb92462f5d49f5f0!2sBentley,+1615+Dundas+St+E,+Whitby,+ON+L1N+7G3!8m2!3d43.8840968!4d-78.9097844!16s%2Fg%2F11c0xnbrxr!3m5!1s0x89d51dc666af8e69:0x34624a25b9655d71!8m2!3d43.8840217!4d-78.9099349!16s%2Fg%2F1tjz4c2c"
-                         class="link-style"
-                         data-hover-text="Go to Google Maps">1615 Dundas St E, Whitby, ON L1N 2L1</a>
+                        <a href="https://www.google.com/maps/place/Dr.+Hanoosh+Family+Practice/@43.902935,-78.8392652,18.75z/data=!4m15!1m8!3m7!1s0x89d51d78071e4991:0xa85f4e9d8af0f3e!2sDr.+Hanoosh+Family+Practice!8m2!3d43.9030176!4d-78.8392242!10e1!16s%2Fg%2F1tkc7nx6!3m5!1s0x89d51d78071e4991:0xa85f4e9d8af0f3e!8m2!3d43.9030176!4d-78.8392242!16s%2Fg%2F1tkc7nx6?entry=ttu"
+                           class="link-style"
+                           data-hover-text="Go to Google Maps">1615 Dundas St E, Whitby, ON L1N 2L1</a>
                     </p>
                     <h2>Additional Information</h2>
                     <p style="padding-left:3%;">
                         Dr. Hanoosh's Medical Office can be found on the main floor across the Whitby Urgent Care clinic inside the Whitby Mall.
                     </p>
                 </div>
-
-                <div id="map" class="map"></div>
-                <script type="text/javascript">
-                    var map = new ol.Map({
-                        target: 'map',
-                        layers: [
-                            new ol.layer.Tile({
-                                source: new ol.source.OSM()
-                            })
-                        ],
-                        view: new ol.View({
-                            center: ol.proj.fromLonLat([-78.9099073, 43.8839014]),
-                            zoom: 17
+            </div>
+            <div id="map" class="map"></div>
+            <script type="text/javascript">
+                var map = new ol.Map({
+                    target: 'map',
+                    layers: [
+                        new ol.layer.Tile({
+                            source: new ol.source.OSM()
                         })
-                    });
+                    ],
+                    view: new ol.View({
+                        center: ol.proj.fromLonLat([-78.9099073, 43.8839014]),
+                        zoom: 17
+                    })
+                });
 
-                    var marker = new ol.Feature({
-                        geometry: new ol.geom.Point(ol.proj.fromLonLat([-78.9099073, 43.8839014]))
-                    });
+                var marker = new ol.Feature({
+                    geometry: new ol.geom.Point(ol.proj.fromLonLat([-78.9099073, 43.8839014]))
+                });
 
-                    var markerStyle = new ol.style.Style({
-                        image: new ol.style.Circle({
-                            radius: 7,
-                            fill: new ol.style.Fill({
-                                color: '#ff0000'
-                            }),
-                            stroke: new ol.style.Stroke({
-                                color: '#fff',
-                                width: 2
-                            })
+                var markerStyle = new ol.style.Style({
+                    image: new ol.style.Circle({
+                        radius: 7,
+                        fill: new ol.style.Fill({
+                            color: '#ff0000'
+                        }),
+                        stroke: new ol.style.Stroke({
+                            color: '#fff',
+                            width: 2
                         })
-                    });
+                    })
+                });
 
-                    marker.setStyle(markerStyle);
+                marker.setStyle(markerStyle);
 
-                    var vectorSource = new ol.source.Vector({
-                        features: [marker]
-                    });
+                var vectorSource = new ol.source.Vector({
+                    features: [marker]
+                });
 
-                    var markerVectorLayer = new ol.layer.Vector({
-                        source: vectorSource
-                    });
+                var markerVectorLayer = new ol.layer.Vector({
+                    source: vectorSource
+                });
 
-                    map.addLayer(markerVectorLayer);
+                map.addLayer(markerVectorLayer);
 
-                    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                        anchor.addEventListener('click', function (e) {
-                            e.preventDefault();
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
 
-                            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                                behavior: 'smooth'
-                            });
+                        document.querySelector(this.getAttribute('href')).scrollIntoView({
+                            behavior: 'smooth'
                         });
                     });
-                </script>
-            </div>
+                });
+            </script>
         </div>
     </section>
 
