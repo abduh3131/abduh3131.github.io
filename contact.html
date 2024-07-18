@@ -190,36 +190,44 @@
                     <p>905-240-3456</p>
                     <h2>Address</h2>
                     <p>
-                        <a href="https://www.google.com/maps/place/Dr.+Hanoosh+Family+Practice/@43.902935,-78.8392652,18.75z/data=!4m15!1m8!3m7!1s0x89d51d78071e4991:0xa85f4e9d8af0f3e!2sDr.+Hanoosh+Family+Practice!8m2!3d43.9030176!4d-78.8392242!10e1!16s%2Fg%2F1tkc7nx6!3m5!1s0x89d51d78071e4991:0xa85f4e9d8af0f3e!8m2!3d43.9030176!4d-78.8392242!16s%2Fg%2F1tkc7nx6?entry=ttu"
-                           class="link-style"
-                           data-hover-text="Go to Google Maps">1615 Dundas St E, Whitby, ON L1N 2L1</a>
-                    </p>
-                    
-                    <h2>Additional Information</h2>
-                    <p style="padding-left:3%;">
-                        Dr. Hanoosh's Medical Office can be found on the main floor across the Whitby Urgent Care clinic inside the Whitby Mall.
-                    </p>
-                </div>
+                      <a href="https://www.google.com/maps/place/Dr.+Hanoosh+Family+Practice/@43.902935,-78.8392652,18.75z/data=!4m15!1m8!3m7!1s0x89d51d78071e4991:0xa85f4e9d8af0f3e!2sDr.+Hanoosh+Family+Practice!8m2!3d43.9030176!4d-78.8392242!10e1!16s%2Fg%2F1tkc7nx6!3m5!1s0x89d51d78071e4991:0xa85f4e9d8af0f3e!8m2!3d43.9030176!4d-78.8392242!16s%2Fg%2F1tkc7nx6?entry=ttu"
+   class="link-style"
+   data-hover-text="Go to Google Maps">1615 Dundas St E, Whitby, ON L1N 2L1</a>
 
-                <div id="map" class="map"></div>
-                <script type="text/javascript">
-                    var map = new ol.Map({
-                        target: 'map',
-                        layers: [
-                            new ol.layer.Tile({
-                                source: new ol.source.OSM()
-                            })
-                        ],
-                        view: new ol.View({
-                            center: ol.proj.fromLonLat([-78.9099073,43.8839014) ])),
-                             zoom: 17
-                        })
-                    });
+<h2>Additional Information</h2>
+<p style="padding-left:3%;">
+    Dr. Hanoosh's Medical Office can be found on the main floor across the Whitby Urgent Care clinic inside the Whitby Mall.
+</p>
 
-                    var marker = new ol.Feature({
-                        geometry: new ol.geom.Point(ol.proj.fromLonLat([-78.9099073,43.8839014]))
-                    });
+<div id="map" class="map"></div>
+<script type="text/javascript">
+    var map = new ol.Map({
+        target: 'map',
+        layers: [
+            new ol.layer.Tile({
+                source: new ol.source.OSM()
+            })
+        ],
+        view: new ol.View({
+            center: ol.proj.fromLonLat([-78.9099073, 43.8839014]),
+            zoom: 17
+        })
+    });
 
+    var marker = new ol.Feature({
+        geometry: new ol.geom.Point(ol.proj.fromLonLat([-78.9099073, 43.8839014]))
+    });
+
+    var vectorSource = new ol.source.Vector({
+        features: [marker]
+    });
+
+    var markerVectorLayer = new ol.layer.Vector({
+        source: vectorSource
+    });
+
+    map.addLayer(markerVectorLayer);
+</script>
                     var markerStyle = new ol.style.Style({
                         image: new ol.style.Circle({
                             radius: 7,
