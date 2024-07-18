@@ -17,31 +17,20 @@
             height: 400px;
             width: 100%;
         }
-    </style>
-
-    <style>
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-between; /* updated this line */
+            justify-content: space-between;
             min-height: 100vh;
             margin: 0;
             padding: 0;
-            font-family: 'Cairo', sans-serif;
-            font-family: 'Raleway', sans-serif;
-            font-family: 'Source Sans Pro', sans-serif;
+            font-family: 'Cairo', sans-serif, 'Raleway', sans-serif, 'Source Sans Pro', sans-serif;
             overflow-x: hidden;
         }
-
-
         ul {
             list-style-type: none;
         }
-
-
-
-
         header {
             width: 100%;
             background-color: #333;
@@ -49,107 +38,88 @@
             color: white;
             text-align: center;
         }
-
-            header h1 {
-                margin: 0;
-                font-size: 24px;
-            }
-
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
         nav ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
         }
-
-            nav ul li {
-                display: inline;
-                margin: 0 10px;
-            }
-
-                nav ul li a {
-                    text-decoration: none;
-                    color: #fff;
-                }
-
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
         section {
             width: 100%;
             padding: 20px;
             text-align: center;
         }
-
-
         hr {
             width: 30%;
         }
-
-
         p {
             font-size: 14pt;
         }
-
         #map {
             width: 600px;
             height: 450px;
             border: 3px solid black;
             margin-right: 3%;
         }
-
         .phone-link {
             transition: color 0.3s ease-in-out;
             color: black;
             text-decoration: none;
             position: relative;
         }
-
-            .phone-link:hover {
-                color: red;
-            }
-
-                .phone-link:hover::after {
-                    content: "Call";
-                    position: absolute;
-                    top: 100%;
-                    left: 0;
-                    background-color: #ddd;
-                    color: black;
-                    padding: 2px;
-                    border-radius: 3px;
-                    opacity: 0;
-                    transition: opacity 0.3s ease-in-out;
-                }
-
-                .phone-link:hover::after {
-                    opacity: 1;
-                }
-
+        .phone-link:hover {
+            color: red;
+        }
+        .phone-link:hover::after {
+            content: "Call";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ddd;
+            color: black;
+            padding: 2px;
+            border-radius: 3px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .phone-link:hover::after {
+            opacity: 1;
+        }
         .link-style {
             transition: color 0.5s ease-in-out;
             color: black;
             text-decoration: none;
             position: relative;
         }
-
-            .link-style:hover {
-                color: red;
-            }
-
-                .link-style:hover::after {
-                    content: attr(data-hover-text);
-                    position: absolute;
-                    top: 100%;
-                    left: 0;
-                    background-color: #ddd;
-                    color: black;
-                    padding: 2px;
-                    border-radius: 3px;
-                    opacity: 0;
-                    transition: opacity 0.3s ease-in-out;
-                }
-
-                .link-style:hover::after {
-                    opacity: 1;
-                }
-
+        .link-style:hover {
+            color: red;
+        }
+        .link-style:hover::after {
+            content: attr(data-hover-text);
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ddd;
+            color: black;
+            padding: 2px;
+            border-radius: 3px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .link-style:hover::after {
+            opacity: 1;
+        }
         footer {
             width: 100%;
             background-color: #333;
@@ -158,7 +128,6 @@
             text-align: center;
             flex-shrink: 0;
         }
-
         html {
             scroll-behavior: smooth;
         }
@@ -173,15 +142,11 @@
         </nav>
     </header>
 
-
     <h1 style="font-size:32pt" id="cf">Contact Information</h1>
     <hr style="bottom-margin:10%" />
 
     <section id="about" style="padding-top:5%;">
-
-
         <div>
-
             <div style="display: flex; flex-wrap: wrap;">
                 <div style="flex: 1;">
                     <h2>Phone</h2>
@@ -191,41 +156,34 @@
                     <h2>Address</h2>
                     <p>
                       <a href="https://www.google.com/maps/place/Dr.+Hanoosh+Family+Practice/@43.902935,-78.8392652,18.75z/data=!4m15!1m8!3m7!1s0x89d51d78071e4991:0xa85f4e9d8af0f3e!2sDr.+Hanoosh+Family+Practice!8m2!3d43.9030176!4d-78.8392242!10e1!16s%2Fg%2F1tkc7nx6!3m5!1s0x89d51d78071e4991:0xa85f4e9d8af0f3e!8m2!3d43.9030176!4d-78.8392242!16s%2Fg%2F1tkc7nx6?entry=ttu"
-   class="link-style"
-   data-hover-text="Go to Google Maps">1615 Dundas St E, Whitby, ON L1N 2L1</a>
+                         class="link-style"
+                         data-hover-text="Go to Google Maps">1615 Dundas St E, Whitby, ON L1N 2L1</a>
+                    </p>
+                    <h2>Additional Information</h2>
+                    <p style="padding-left:3%;">
+                        Dr. Hanoosh's Medical Office can be found on the main floor across the Whitby Urgent Care clinic inside the Whitby Mall.
+                    </p>
+                </div>
 
-<h2>Additional Information</h2>
-<p style="padding-left:3%;">
-    Dr. Hanoosh's Medical Office can be found on the main floor across the Whitby Urgent Care clinic inside the Whitby Mall.
-</p>
+                <div id="map" class="map"></div>
+                <script type="text/javascript">
+                    var map = new ol.Map({
+                        target: 'map',
+                        layers: [
+                            new ol.layer.Tile({
+                                source: new ol.source.OSM()
+                            })
+                        ],
+                        view: new ol.View({
+                            center: ol.proj.fromLonLat([-78.9099073, 43.8839014]),
+                            zoom: 17
+                        })
+                    });
 
-    var map = new ol.Map({
-        target: 'map',
-        layers: [
-            new ol.layer.Tile({
-                source: new ol.source.OSM()
-            })
-        ],
-        view: new ol.View({
-            center: ol.proj.fromLonLat([-78.9099073, 43.8839014]),
-            zoom: 17
-        })
-    });
+                    var marker = new ol.Feature({
+                        geometry: new ol.geom.Point(ol.proj.fromLonLat([-78.9099073, 43.8839014]))
+                    });
 
-    var marker = new ol.Feature({
-        geometry: new ol.geom.Point(ol.proj.fromLonLat([-78.9099073, 43.8839014]))
-    });
-
-    var vectorSource = new ol.source.Vector({
-        features: [marker]
-    });
-
-    var markerVectorLayer = new ol.layer.Vector({
-        source: vectorSource
-    });
-
-    map.addLayer(markerVectorLayer);
-</script>
                     var markerStyle = new ol.style.Style({
                         image: new ol.style.Circle({
                             radius: 7,
@@ -246,7 +204,7 @@
                     });
 
                     var markerVectorLayer = new ol.layer.Vector({
-                        source: vectorSource,
+                        source: vectorSource
                     });
 
                     map.addLayer(markerVectorLayer);
@@ -260,21 +218,17 @@
                             });
                         });
                     });
-
                 </script>
-
             </div>
-
-
         </div>
-        </div>
-        <hr style="margin:10%" />
+    </section>
 
-        <footer>
-            <div class="footer-container">
-                <p>&copy; 2023 Dr. Hanoosh Family Medicine Practice. All rights reserved.<br />@Abdullah.Hanoosh</p>
-            </div>
-        </footer>
+    <hr style="margin:10%" />
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2023 Dr. Hanoosh Family Medicine Practice. All rights reserved.<br />@Abdullah.Hanoosh</p>
+        </div>
+    </footer>
 </body>
-
 </html>
