@@ -27,7 +27,18 @@
         Dr. Hanoosh Family Medicine
         <span>Whitby Clinic</span>
       </a>
-      <ul class="nav-links">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Toggle navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="primary-navigation">
         <li><a href="index.html#about">About</a></li>
         <li><a href="index.html#approach">Approach</a></li>
         <li><a href="index.html#hours">Hours</a></li>
@@ -108,13 +119,51 @@
     </section>
   </main>
 
-  <footer>
+   <footer>
     &copy; 2024 Dr. Hanoosh Family Medicine Practice. All rights reserved.
     <br>
     <h7 style="font-size:x-small">By Abdullah Hanoosh</h7>
   </footer>
 
   <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (navToggle && navLinks) {
+      const focusableNavItems = navLinks.querySelectorAll('a');
+
+      const closeNav = () => {
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('nav-open');
+      };
+
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!expanded));
+        document.body.classList.toggle('nav-open', !expanded);
+      });
+
+      focusableNavItems.forEach((link) =>
+        link.addEventListener('click', () => {
+          if (window.matchMedia('(max-width: 880px)').matches) {
+            closeNav();
+          }
+        })
+      );
+
+      window.addEventListener('resize', () => {
+        if (!window.matchMedia('(max-width: 880px)').matches) {
+          closeNav();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          closeNav();
+        }
+      });
+    }
+
     const lat = 43.884489261533844;
     const lng = -78.90971913637965;
 

@@ -16,7 +16,18 @@
         Dr. Hanoosh Family Medicine
         <span>Whitby Clinic</span>
       </a>
-      <ul class="nav-links">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Toggle navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="primary-navigation">
         <li><a href="#about">About</a></li>
         <li><a href="#approach">Approach</a></li>
         <li><a href="#hours">Hours</a></li>
@@ -47,7 +58,7 @@
             alt="Family doctor greeting a patient at the clinic"
             loading="lazy"
           />
-        
+          
         </figure>
       </div>
     </section>
@@ -169,11 +180,50 @@
     </section>
   </main>
 
-  <footer>
-    &copy; 2024 Dr. Hanoosh Family Medicine Practice. All rights reserved. 
+   <footer>
+    &copy; 2024 Dr. Hanoosh Family Medicine Practice. All rights reserved.
     <br>
     <h7 style="font-size:x-small">By Abdullah Hanoosh</h7>
-
   </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (navToggle && navLinks) {
+      const focusableNavItems = navLinks.querySelectorAll('a');
+
+      const closeNav = () => {
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('nav-open');
+      };
+
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!expanded));
+        document.body.classList.toggle('nav-open', !expanded);
+      });
+
+      focusableNavItems.forEach((link) =>
+        link.addEventListener('click', () => {
+          if (window.matchMedia('(max-width: 880px)').matches) {
+            closeNav();
+          }
+        })
+      );
+
+      window.addEventListener('resize', () => {
+        if (!window.matchMedia('(max-width: 880px)').matches) {
+          closeNav();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          closeNav();
+        }
+      });
+    }
+  </script>
 </body>
 </html>
