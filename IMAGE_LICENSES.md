@@ -1,11 +1,11 @@
 # Image License Report
 
-All photographs referenced below are hosted on Unsplash and are available under the [Unsplash License](https://unsplash.com/license), which permits free commercial use without the need for attribution. Attribution is still provided in code comments for internal clarity.
+The current build uses photographs that ship with the repository. Please confirm their licensing (or replace them) before publishing the site to production.
 
-| Page & Usage | Image Description | Source | License |
-| --- | --- | --- | --- |
-| `index.html` hero | Family doctor speaking with a patient in a bright exam room | [National Cancer Institute on Unsplash](https://unsplash.com/photos/MEdmHNNfQ2o) | Unsplash License (free for commercial use) |
-| `index.html` "What to expect" section | Clinic team reviewing patient information together | [CDC on Unsplash](https://unsplash.com/photos/s9CC2SKySJM) | Unsplash License (free for commercial use) |
-| `contact.html` hero | Clinic reception team smiling at the front desk | [LinkedIn Sales Solutions on Unsplash](https://unsplash.com/photos/u3hmzw5U-SI) | Unsplash License (free for commercial use) |
+| File | Usage | Notes |
+| --- | --- | --- |
+| `doctor.jpg` | `index.html` hero image | Client-provided placeholder stored locally. Replace or confirm licensing for commercial use. |
+| `image2.jpg` | `index.html` “What to expect” image | Client-provided placeholder stored locally. Replace or confirm licensing for commercial use. |
+| `image3.jpg` | `contact.html` hero image | Client-provided placeholder stored locally. Replace or confirm licensing for commercial use. |
 
 No other photographs are used on the site at this time.
