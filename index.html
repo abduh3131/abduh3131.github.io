@@ -1,371 +1,179 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Hanoosh</title>
-    <link rel="stylesheet" href="styles.css"> <!-- External CSS file for styling -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400&family=Raleway:wght@300;700&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 0;
-            font-family: 'Cairo', sans-serif;
-            font-family: 'Raleway', sans-serif;
-            font-family: 'Source Sans Pro', sans-serif;
-            overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-        @media screen and (max-width: 600px) {
-            body {
-                padding: 20px;
-            }
-
-            .card-container {
-                flex-direction: column;
-            }
-
-            .card {
-                margin: 10px auto;
-            }
-
-            .About {
-                flex-direction: column-reverse;
-                align-items: center;
-                text-align: center;
-            }
-
-                .About img {
-                    margin: 20px auto;
-                    width: 100%;
-                }
-
-            .floating-contact-form {
-                left: 20px;
-                right: 20px;
-            }
-
-            .contact-form-container {
-                width: 100%;
-                bottom: 70px;
-            }
-        }
-
-        main {
-            flex: 1 0 auto;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        .card-container {
-            display: flex;
-            justify-content: center;
-        }
-
-        .card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            width: 300px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            margin: 30px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            margin-top: 5%;
-        }
-
-            .card img {
-                width: 200px;
-                height: 200px;
-                object-fit: cover;
-                border-radius: 50%;
-                margin-bottom: 10px;
-            }
-
-            .card:hover {
-                transform: scale(1.1);
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            }
-
-
-        header {
-            width: 100%;
-            background-color: #333;
-            padding: 10px 0;
-            color: white;
-            text-align: center;
-        }
-
-            header h1 {
-                margin: 0;
-                font-size: 24px;
-            }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-            nav ul li {
-                display: inline;
-                margin: 0 10px;
-            }
-
-                nav ul li a {
-                    text-decoration: none;
-                    color: #fff;
-                }
-
-        section {
-            width: 100%;
-            padding: 20px;
-            text-align: center;
-        }
-
-        footer {
-            width: 100%;
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-            flex-shrink: 0;
-        }
-
-        #about {
-            background-image: url("IMG_7998.jpeg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 100%;
-            color: white;
-            margin-bottom: 10%;
-            padding-top: 20%;
-            padding-bottom: 20%;
-        }
-
-        hr {
-            width: 30%;
-        }
-
-        #end {
-            background-color: #333;
-            color: white;
-        }
-
-        .About {
-            display: flex;
-            align-items: center;
-            padding-left: 7%;
-            padding-right: 7%;
-        }
-
-            .About p {
-                flex: 1;
-            }
-
-            .About img {
-                width: 270px;
-                height: auto;
-                border: 2px solid #fff;
-                border-radius: 10px;
-                margin-left: 20px;
-            }
-            
-            #htable{
-                font-size:14pt;
-                text-align:center;
-                table-layout:fixed;
-                
-            }
-                #htable td {
-                    padding: 5px 30px; /* Vertical and horizontal padding */
-                }
-       
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dr. Hanoosh Family Medicine Practice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#ab" onclick="scrollToAbout()">About</a></li>
-                <li><a href="#service" onclick="scrollToAbout()">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <div class="navbar">
+      <a class="brand" href="index.html">
+        Dr. Hanoosh Family Medicine
+        <span>Whitby Clinic</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#hours">Hours</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a class="nav-call" href="tel:9052403455">Call 905-240-3455</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-content">
+        <div class="hero-copy fade-in">
+          <p class="eyebrow">Primary care for every generation</p>
+          <h1>Compassionate care that keeps your family supported.</h1>
+          <p>
+            At Dr. Hanoosh Family Medicine Practice, individuals and families find a welcoming medical home. We combine
+            attentive listening, thoughtful guidance, and trusted expertise so you can feel confident during every visit.
+          </p>
+          <div class="hero-actions">
+            <a class="btn-primary" href="tel:9052403455">Call 905-240-3455</a>
+            <a class="btn-secondary" href="contact.html">Plan Your Visit</a>
+          </div>
+        </div>
+        <figure class="hero-visual fade-in" style="animation-delay:0.15s;">
+          <img
+            src="doctor.jpg"
+            alt="Family doctor greeting a patient at the clinic"
+            loading="lazy"
+          />
+        
+        </figure>
+      </div>
+    </section>
 
     <section id="about">
-        <div class="mt-4">
-            <h1 style="font-size:42pt;"><b>Dr. Hanoosh Family Medicine Practice</b></h1>
-            <p style="padding:10%; font-size:xx-large;">Welcome to Dr. Hanoosh's Family Medicine Practice, a trusted and compassionate family practice in Whitby, providing comprehensive healthcare services with a patient-centered approach.</p>
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>A medical home that feels calm, respectful, and connected.</h2>
+          <p>
+            We believe family medicine should be a reassuring experience. Our team takes time to understand what matters
+            most to each patient, providing clear guidance and continuity of care that supports long-term wellbeing.
+          </p>
         </div>
-        <spacer></spacer>
-
-    </section>
-    
-    
-    <hr />
-
-    <h1 style="align-content:center; margin-top:5%; left:50%" id="hours"><b>Hours</b></h1>
-    <div style="padding:5%; margin-top:-2%;" id="hrs">
-        <table id="htable">
-            <tr>
-                <th>Day</th>
-                <th>Hours</th>
-            </tr>
-            <tr>
-                <td>Monday</td>
-                <td>9 a.m.–3 p.m. (Appointments Only)</td>
-            </tr>
-            <tr>
-                <td>Tuesday</td>
-                <td>9 a.m.–4 p.m.</td>
-            </tr>
-            <tr>
-                <td>Wednesday</td>
-                <td>12 p.m.–8 p.m.</td>
-            </tr>
-            <tr>
-                <td>Thursday</td>
-                <td>9 a.m.–4 p.m.</td>
-            </tr>
-            <tr>
-                <td>Friday</td>
-                <td>9 a.m.-2 p.m.</td>
-            </tr>
-            <tr>
-                <td>Saturday</td>
-                <td>Closed</td>
-            </tr>
-            <tr>
-                <td>Sunday</td>
-                <td>Closed</td>
-            </tr>
-        </table>
-    </div>
-    <hr />
-
-    <h1 style="align-content:center; margin-top:5%;" id="service"><b>Services</b></h1>
-    <div class="card-container">
-        <div class="card">
-            <img src="c1.jpg" alt="Image 1">
-            <h3>Expert Chronic Disease Management Care</h3>
-            <p>Our chronic disease management service provides tailored care plans, regular check-ins, and education to help patients manage their conditions and improve their quality of life.</p>
-        </div>
-
-        <div class="card">
-            <img src="image2.jpg" alt="Image 2">
-            <h3>Comprehensive Preventive Health Services</h3>
-            <p>Our preventive care service provides comprehensive health screenings and wellness exams to help detect and prevent potential health issues.</p>
-        </div>
-
-        <div class="card">
-            <img src="image3.jpg" alt="Image 3">
-            <h3>Comprehensive Family Healthcare Services</h3>
-            <p>Our family medicine services offer comprehensive primary healthcare for individuals and families, with a focus on preventative care and health education.</p>
-        </div>
-    </div>
-    <hr style="margin:10%" />
-    <section id="end">
-        <h1 style="font-size:36pt;" id="ab">About</h1>
-        <div class="About">
-            <p style="text-align:justify;">
-                Dr. Hanoosh Family Practice in Oshawa is a trusted medical facility providing personalized and compassionate healthcare services to individuals and families.
-                Dr. Hanoosh offers comprehensive care for all ages, focusing on preventive care, check-ups, and managing chronic conditions.
-                With modern facilities and a patient-centered approach,
-                he prioritize the well-being of their patients and strives to build strong doctor-patient relationships based on trust and open communication.
-                <br /><br /> </br><b>Please note the clinic is not accepting new patients at this time</b>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Relationship-focused</h3>
+            <p>
+              Every appointment is a chance to build trust. We keep conversations open, respectful, and centered on your
+              goals for health.
             </p>
-
-            <img src="doctor.jpg" alt="Doctor Image">
+          </article>
+          <article class="feature-card">
+            <h3>Coordinated care</h3>
+            <p>
+              The clinic team works together to ensure visits run smoothly, follow-ups are easy to understand, and your
+              questions are answered.
+            </p>
+          </article>
+          <article class="feature-card">
+            <h3>Support for every stage</h3>
+            <p>
+              From routine checkups to ongoing care plans, we offer a calm environment that welcomes every member of the
+              family.
+            </p>
+          </article>
         </div>
-
+      </div>
     </section>
-    </div>
 
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            $('a[href^="#"]').on('click', function (event) {
-                event.preventDefault();
-                var target = $(this.getAttribute('href'));
-                if (target.length) {
-                    $('html, body').stop().animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                }
-            });
-        });
-
-
-
-    </script>
-
-
-    <style>
-
-        .floating-call-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 9999;
-        }
-
-        .toggle-form {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: none;
-            background-color: transparent;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            padding: 0;
-            transition: transform 0.5s ease, box-shadow 0.3s;
-        }
-
-            .toggle-form img {
-                border-radius: 50%;
-            }
-
-            .toggle-form:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-            }
-    </style>
-    <div class="floating-call-button">
-        <a href="tel:+19052403455" class="toggle-form" title="Call">
-            <img src="po.png" style="width:50px; height:auto;" alt="Call us now">
-        </a>
-    </div>
-
-
-
-
-
-    <footer>
-        <div class="footer-container">
-            <p>&copy; 2023 Dr. Hanoosh Family Medicine Practice. All rights reserved.<br />@Abdullah.Hanoosh</p>
+    <section id="approach">
+      <div class="section-inner two-column">
+        <div class="section-copy">
+          <h2>What to expect when you visit</h2>
+          <p>
+            Our clinic is designed with warmth and clarity in mind. Patients are greeted by a friendly team, guided through
+            their appointment, and provided with easy-to-follow next steps for continuing care.
+          </p>
+          <p>
+            We keep communication straightforward, focus on proactive conversations, and collaborate with patients to help
+            them feel confident in their care plan.
+          </p>
         </div>
-    </footer>
+        <figure class="image-card">
+          <img
+            src="image2.jpg"
+            alt="Clinic team reviewing patient information together"
+            loading="lazy"
+          />
+        </figure>
+      </div>
+    </section>
 
+    <section id="hours">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>Hours of operation</h2>
+          <p>Plan your visit around our weekly clinic schedule.</p>
+        </div>
+        <div class="map-card hours-card">
+          <div class="hours-wrapper" role="table" aria-describedby="hours">
+            <div class="hours-row" role="row">
+              <span role="columnheader">Day</span>
+              <span role="columnheader">Hours</span>
+            </div>
+            <div class="hours-row" role="row">
+              <span role="rowheader">Monday</span>
+              <span>9:00 a.m. – 3:00 p.m. (appointments only)</span>
+            </div>
+            <div class="hours-row" role="row">
+              <span role="rowheader">Tuesday</span>
+              <span>9:00 a.m. – 4:00 p.m.</span>
+            </div>
+            <div class="hours-row" role="row">
+              <span role="rowheader">Wednesday</span>
+              <span>12:00 p.m. – 8:00 p.m.</span>
+            </div>
+            <div class="hours-row" role="row">
+              <span role="rowheader">Thursday</span>
+              <span>9:00 a.m. – 4:00 p.m.</span>
+            </div>
+            <div class="hours-row" role="row">
+              <span role="rowheader">Friday</span>
+              <span>Closed</span>
+            </div>
+            <div class="hours-row" role="row">
+              <span role="rowheader">Saturday</span>
+              <span>Closed</span>
+            </div>
+            <div class="hours-row" role="row">
+              <span role="rowheader">Sunday</span>
+              <span>11:00 a.m. – 2:00 p.m.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="callout-title">
+      <div class="section-inner">
+        <div class="callout">
+          <strong id="callout-title">Your family’s care is our priority.</strong>
+          <p>
+            Reach out by phone to connect with the clinic team, confirm appointment details, or ask any questions ahead of
+            your visit. We look forward to welcoming you.
+          </p>
+          <a class="btn-primary" href="tel:9052403455">Call 905-240-3455</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2024 Dr. Hanoosh Family Medicine Practice. All rights reserved. 
+    <br>
+    <h7 style="font-size:x-small">By Abdullah Hanoosh</h7>
+
+  </footer>
 </body>
-
 </html>
