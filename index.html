@@ -29,7 +29,7 @@
           type="button"
           aria-expanded="false"
           aria-controls="primary-navigation"
-          aria-label="Toggle navigation"
+          aria-label="Open navigation menu"
         >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -193,15 +193,19 @@
     if (navToggle && navLinks) {
       const focusableNavItems = navLinks.querySelectorAll('a');
 
+      const setExpandedState = (expanded) => {
+        navToggle.setAttribute('aria-expanded', String(expanded));
+        navToggle.setAttribute('aria-label', expanded ? 'Close navigation menu' : 'Open navigation menu');
+        document.body.classList.toggle('nav-open', expanded);
+      };
+
       const closeNav = () => {
-        navToggle.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('nav-open');
+        setExpandedState(false);
       };
 
       navToggle.addEventListener('click', () => {
         const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-        navToggle.setAttribute('aria-expanded', String(!expanded));
-        document.body.classList.toggle('nav-open', !expanded);
+        setExpandedState(!expanded);
       });
 
       focusableNavItems.forEach((link) =>
@@ -211,6 +215,18 @@
           }
         })
       );
+
+      document.addEventListener('click', (event) => {
+        if (!document.body.classList.contains('nav-open')) {
+          return;
+        }
+
+        if (navLinks.contains(event.target) || navToggle.contains(event.target)) {
+          return;
+        }
+
+        closeNav();
+      });
 
       window.addEventListener('resize', () => {
         if (!window.matchMedia('(max-width: 880px)').matches) {
@@ -223,6 +239,8 @@
           closeNav();
         }
       });
+
+      setExpandedState(false);
     }
   </script>
 </body>
